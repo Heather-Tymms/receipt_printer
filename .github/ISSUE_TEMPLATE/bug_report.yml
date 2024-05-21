@@ -1,0 +1,39 @@
+name: Bug Report
+description: Create a bug report
+title: "[Bug]: "
+labels: bug
+body:
+  - type: textarea
+    id: bug-description
+    attributes: 
+      label: Bug description
+      description: Please provide a description of the issue
+      placeholder: What is not working?
+  - type: textarea
+    id: bug-steps
+    attributes:
+      label: Steps to recreate
+      description: Please provide the steps to recreate the bug, please provide any relevant input files or project paths.
+      placeholder: |
+        1. Open the tool
+        2. Select this option
+        3. Click this button
+        4. Bug appears!
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance Criteria
+      description: Please describe how the fixed tool should work
+      placeholder: How will the developer know the bug has been resolved?
+  - type: textarea
+    id: error-message
+    attributes:
+      label: Error Information
+      description: Please provide any error messages that may have been shown.
+      placeholder: Error text or screenshot of command prompt
+  - type: textarea
+    id: additional-info
+    attributes:
+      label: Additional Information
+      description: Please provide any additonal information not included in the above fields
+      placeholder: Anything else

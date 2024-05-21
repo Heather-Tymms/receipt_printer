@@ -1,0 +1,29 @@
+name: Feature Request
+description: Request an update or addition
+title: "[Feature]: "
+labels: enhancement
+body:
+  - type: textarea
+    id: feature-description
+    attributes: 
+      label: Feature description
+      description: Please provide a description of the updated or additional functionality you would like to see
+      placeholder: New feature description
+  - type: textarea
+    id: feature-projects
+    attributes:
+      label: Relevant projects
+      description: Please provide any information for relevant projects that this feature will be useful for
+      placeholder: Project type and/or potential clients
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance Criteria
+      description: Please describe how the feature should work
+      placeholder: How will the developer know the feature is completed?
+  - type: textarea
+    id: additional-info
+    attributes:
+      label: Additional Information
+      description: Please provide any additonal information not included in the above fields
+      placeholder: Anything else
