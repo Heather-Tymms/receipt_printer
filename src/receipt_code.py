@@ -1,3 +1,5 @@
+import numpy as np
+
 store_name = "Nathan's Grocery"
 
 receipt_width = 30
@@ -13,9 +15,17 @@ prices = {
 
 tax_rate = 0.13
 
+
+def round_value(val):
+    return np.round(val, decimals=2)
+
+
 def calculate_price(item, count):
+    if item not in prices:
+        raise ValueError("All items in input list needs to be in the rices dictionary.")
+    
     items_price = prices[item] * count
-    return f"${items_price}"
+    return f"${round_value(items_price)}"
 
 def center_text(text):
     print("|" + text.center(receipt_width) + "|")
@@ -36,21 +46,29 @@ def print_spacer(label, value):
 
 
 def print_taxes(title, value):
-    print_spacer(title, f"${value}")
+    print_spacer(title, f"${round_value(value)}")
 
 
 def print_receipt(items):
+    """Print out receipt in the terminal."""
+
     items_count = count_items(items)
+
+    # top of the receipt
     print("+" + "-" * receipt_width + "+")
     print("|" + " " * receipt_width + "|")
     center_text(store_name)
     print("|" + " " * receipt_width + "|")
+
+    # print items and price
     for item in items_count.keys():
         item_name = item
         item_count = items_count[item]
         item_price = calculate_price(item, item_count)
         print_spacer(f"{item_name} x{item_count}", item_price)
     print("|" + "-" * receipt_width + "|")
+
+    # calculate and print total and tax
     subtotal = sum([prices[item] * items_count[item] for item in items_count])
     tax = subtotal * tax_rate
     total = subtotal + tax
